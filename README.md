@@ -1,5 +1,3 @@
----
-> Projeto
 **Financial BI - Contabilidade Gerencial (SQL-first)**
 
 Projeto de Business Intelligence end-to-end, focado em Contabilidade Gerencial, desenvolvido com ênfase em SQL, modelagem dimensional, métricas financeiras confiáveis e dashboards interativos.  
