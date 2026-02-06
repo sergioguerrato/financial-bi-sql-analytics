@@ -250,14 +250,6 @@ BEGIN
   SET status = 'alugado'
   WHERE im.id_imovel IN (SELECT id_imovel FROM erp.contrato_locacao WHERE status='ativo');
 
-  -- 6.4) Loop mês a mês: novos + renovações + cancelamentos + financeiro
-  -- percorre cada mês (primeiro dia do mês)
-  WITH meses AS (
-    SELECT date_trunc('month', d)::date AS mes
-    FROM generate_series(v_inicio, v_fim, interval '1 month') d
-  )
-  SELECT 1; -- placeholder
-
   -- Para evitar lógica complexa em SQL puro, usamos uma abordagem set-based por mês:
 
   -- 6.4.1) Novos contratos por mês (3)
@@ -402,8 +394,8 @@ BEGIN
     'comissao_venda'::erp.origem_titulo,
     v.id_venda,
     v.data_venda,
-    (date_trunc('month', v.data_venda)::date + 7),
-    (date_trunc('month', v.data_venda)::date + 12),
+    (v.data_venda + 7),
+    (v.data_venda + 12),
     round((v.valor_venda * v.percentual_comissao * 0.5)::numeric, 2),
     'pago'::erp.status_titulo,
     v.id_consultor,
@@ -418,8 +410,8 @@ BEGIN
     'comissao_venda'::erp.origem_titulo,
     v.id_venda,
     (v.data_venda + interval '1 month')::date,
-    (date_trunc('month', (v.data_venda + interval '1 month'))::date + 7),
-    (date_trunc('month', (v.data_venda + interval '1 month'))::date + 12),
+    ((v.data_venda + interval '1 month')::date + 7),
+    ((v.data_venda + interval '1 month')::date + 12),
     round((v.valor_venda * v.percentual_comissao * 0.5)::numeric, 2),
     'pago'::erp.status_titulo,
     v.id_consultor,
