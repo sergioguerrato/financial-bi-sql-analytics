@@ -1,0 +1,85 @@
+[0m22:02:13.714127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced532f9e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced5c61bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced532d9a0>]}
+
+
+============================== 22:02:13.718377 | a1930af0-2b8b-4d9c-a0a6-a0b026e73c3d ==============================
+[0m22:02:13.718377 [info ] [MainThread]: Running with dbt=1.11.4
+[0m22:02:13.718803 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'log_path': 'logs', 'indirect_selection': 'eager', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'profiles_dir': '/home/serju/.dbt', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'invocation_command': 'dbt init financial_dbt', 'log_cache_events': 'False', 'printer_width': '80', 'static_parser': 'True', 'empty': 'None', 'log_format': 'default', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'introspect': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True'}
+[0m22:02:13.733157 [info ] [MainThread]: Creating dbt configuration folder at /home/serju/.dbt
+[0m22:02:13.735824 [debug] [MainThread]: Starter project path: /home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m22:02:13.745035 [info ] [MainThread]: 
+Your new dbt project "financial_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:02:13.745485 [info ] [MainThread]: Setting up your profile.
+[0m22:02:59.803177 [error] [MainThread]: Encountered an error:
+
+[0m22:02:59.806277 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/serju/financial-bi/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:02:59.807594 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 43.43459, "process_in_blocks": "81896", "process_kernel_time": 0.339823, "process_mem_max_rss": "104184", "process_out_blocks": "72", "process_user_time": 1.24751}
+[0m22:02:59.808048 [debug] [MainThread]: Command `dbt init` failed at 22:02:59.807943 after 43.44 seconds
+[0m22:02:59.808340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced5c3bbc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced4e57da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ced550ec60>]}
+[0m22:02:59.808671 [debug] [MainThread]: Flushing usage events
+[0m22:03:00.407669 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:03:02.782196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4cd270140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4cfd5e8a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4ce0e7cb0>]}
+
+
+============================== 22:03:02.784792 | cdc2ac91-f3c9-488b-a6bf-a5a71f32d906 ==============================
+[0m22:03:02.784792 [info ] [MainThread]: Running with dbt=1.11.4
+[0m22:03:02.785178 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'target_path': 'None', 'empty': 'None', 'use_colors': 'True', 'log_path': 'logs', 'log_cache_events': 'False', 'log_format': 'default', 'version_check': 'True', 'quiet': 'False', 'debug': 'False', 'warn_error': 'None', 'profiles_dir': '/home/serju/.dbt', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'invocation_command': 'dbt init financial_dbt', 'fail_fast': 'False', 'no_print': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'indirect_selection': 'eager'}
+[0m22:03:02.791643 [info ] [MainThread]: A project called financial_dbt already exists here.
+[0m22:03:02.792528 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.05538275, "process_in_blocks": "0", "process_kernel_time": 0.234503, "process_mem_max_rss": "99768", "process_out_blocks": "8", "process_user_time": 1.09869}
+[0m22:03:02.792884 [debug] [MainThread]: Command `dbt init` succeeded at 22:03:02.792787 after 0.06 seconds
+[0m22:03:02.793129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4cd592ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4cd24c440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79d4cd24c5c0>]}
+[0m22:03:02.793382 [debug] [MainThread]: Flushing usage events
+[0m22:03:03.380234 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:03:09.836223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72410c4da060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724109eebfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72410a8f12b0>]}
+
+
+============================== 22:03:09.839335 | e97e2bde-b6b2-42d7-8385-29fb85a3c3ba ==============================
+[0m22:03:09.839335 [info ] [MainThread]: Running with dbt=1.11.4
+[0m22:03:09.839911 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error': 'None', 'no_print': 'None', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt init financial_dbt', 'static_parser': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_format': 'default', 'write_json': 'True', 'printer_width': '80', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'profiles_dir': '/home/serju/.dbt', 'indirect_selection': 'eager', 'empty': 'None'}
+[0m22:03:09.846902 [info ] [MainThread]: A project called financial_dbt already exists here.
+[0m22:03:09.847716 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.060280927, "process_in_blocks": "0", "process_kernel_time": 0.251883, "process_mem_max_rss": "99580", "process_out_blocks": "8", "process_user_time": 1.159533}
+[0m22:03:09.848034 [debug] [MainThread]: Command `dbt init` succeeded at 22:03:09.847966 after 0.06 seconds
+[0m22:03:09.848351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724109a68950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72410bc65c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72410a18f9b0>]}
+[0m22:03:09.848708 [debug] [MainThread]: Flushing usage events
+[0m22:03:10.394913 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: erp
+    schema: erp
+    tables:
+      - name: pessoa
+      - name: imovel
+      - name: contrato_locacao
+      - name: renovacao_contrato
+      - name: venda_imovel
+      - name: plano_contas
+      - name: conta_receber
+      - name: conta_pagar
+      - name: fato_financeiro
+      - name: dre_mensal
+
